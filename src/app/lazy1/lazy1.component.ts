@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NumberService } from '../services/number.service';
 
 @Component({
   templateUrl: './lazy1.component.html',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Lazy1Component implements OnInit {
 
-  constructor() { }
+  id: string;
+  constructor(private route: ActivatedRoute,
+              public numberService: NumberService) {
+    this.id = this.route.snapshot.params.id;
+  }
 
   ngOnInit(): void {
   }
