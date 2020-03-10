@@ -1,4 +1,3 @@
-import { NumberService } from './services/number.service';
 import {
   Component,
   ViewContainerRef,
@@ -14,16 +13,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'ng9-app';
 
-  constructor(private router: Router,
-              public numberService: NumberService) {
-    this.numberService.items.push('1');
-    this.numberService.items.push('1');
+  constructor() {
 
-    this.numberService.items.push('1');
-    this.numberService.items.push('1');
-  }
 
-  lazy(num: number) {
-    this.router.navigate([`/lazy/${num}`]);
   }
 }
